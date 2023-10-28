@@ -1,8 +1,8 @@
 import tinycolor from 'tinycolor2'
 
-import config from './../../../utils/config'
+import { config } from './../utils/config'
 
-const { colors } = config.plugins_config.color
+const { colors } = config
 
 export const getColor = (color: string) => {
     if (!colors[color]) {
@@ -34,7 +34,5 @@ export const generateGradient = (color: string) => {
 }
 
 export const getAllColor = () => {
-    return Object.keys(config.plugins_config.color.colors).map((key) => {
-        return key
-    })
+    return colors
 }
