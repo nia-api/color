@@ -6,39 +6,14 @@
 
 ### 安装插件
 
-需在 `nia-api` 根目录执行
-
-```bash
-git subtree add -P src/plugins/color https://github.com/nia-api/color.git main
-```
-
-### 更新插件
-
-需在 `nia-api` 根目录执行
-
-```bash
-git subtree pull -P src/plugins/color https://github.com/nia-api/color.git main
-```
+从 Release 下载文件，然后解压到插件目录
 
 ### 配置文件
 
 ```bash
-# 启用插件
-enable_plugins:
-  - color
-  # ...
-
-# 插件配置
-plugins_config:
-  # ...
-
-  # color 颜色插件
-  # 用于快速获取常用的颜色
-  color:
-    # 定义颜色列表 参考下方的格式定义
-    colors:
-      pink: fa7298
-
+ # 定义颜色列表 参考下方的格式定义
+ colors:
+   pink: fa7298
 ```
 
 ### 接口
@@ -60,22 +35,11 @@ GET
 
 ```javascript
 {
-	"status": 200,
-	"msg": "获取预设颜色数据成功!",
-	"colorList": [
-		"pink",
-		"blue",
-		"aqua",
-		"grey",
-		"skyblue",
-		"indigo",
-		"orange",
-		"green",
-		"red",
-		"purple",
-		"black",
-		"brown"
-	]
+    "status": 200,
+    "msg": "获取预设颜色数据成功!",
+    "colorList": {
+        "pink": "fa7298"
+    }
 }
 ```
 
